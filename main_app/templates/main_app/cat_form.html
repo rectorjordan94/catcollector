@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add Cat</h1>
+<!-- by leaving the action empty, this allows the form to submit to the same url that was used to render it (the submit changes the HTTP verb to post)-->
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table}}
+    </table>
+    <input type="submit" value="Submit!" class="btn">
+</form>
+
+{% endblock %}
